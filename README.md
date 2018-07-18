@@ -7,3 +7,6 @@ using sml new jersey
 
 
 [excercises source code](http://www.cs.princeton.edu/~appel/modern/ml/project.html)
+
+## build up 
+[sml dev setup](https://blog.jez.io/sml-dev-setup/)
