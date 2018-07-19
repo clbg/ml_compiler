@@ -10,3 +10,8 @@ using sml new jersey
 
 ## build up 
 [sml dev setup](https://blog.jez.io/sml-dev-setup/)
+
+
+
+## learn ml
+[fit](https://cs.fit.edu/~ryan/sml/intro.html)
