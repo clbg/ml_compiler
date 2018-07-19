@@ -30,22 +30,34 @@ fun len (x::xs) = 1+len(xs)
 
 val ans = len (lis)
 
+(*Eror Code: parameter or result constraints of cluases  do not agree [tycon mismatch]
+
+stm --> 'z
+exp --> 'z
+
+ansewrs:
+
+http://flint.cs.yale.edu/cs421/smlnj/doc/errors.html
+
+
+parameter or result constraints of clauses don't agree
+In a fun declaration, each clause, or rule, separated by | (vertical bar symbol), has to have the same type (both in the type accepted by the clauses, and the type returned by the clauses).
+  datatype typeA = A;
+  datatype typeA = A
+  datatype typeB = B;
+  datatype typeB = B
+  fun f A = 0
+    | f B = 0;
+  stdIn:36.1-37.12 Error: parameter or result constraints of clauses don't agree [tycon mismatch]
+    this clause:      typeB -> 'Z
+    previous clauses:      typeA -> 'Z
+    in declaration:
+      f =
+	(fn A => 0
+	  | B => 0)
+*)
 
 (*
-fun maxarg_exp (IdExp(id))= 0
-	| maxarg_exp( NumExp (it)) = 0
-	| maxarg_exp (OpExp (e,bi,e2)) = maxOfTwo (maxarg_exp(e) ,maxarg_exp(e2))
-	| maxarg_exp (EseqExp(st,ex)) = maxOfTwo (maxarg_exp(ex), maxarg_stm(st))
-
-
-
-fun maxarg_stm (CompoundStm (l,r)) = maxOfTwo ( maxarg_stm(l), maxarg_stm(r))
-	| maxarg_stm(AssignStm(id,exp)) = maxarg_exp(exp)
-	| maxarg_stm(PrintStm(l)) = len(l)
-
-
-val aa = maxarg_stm(prog)
-*)
 fun maxarg (CompoundStm (left,right))=  maxOfTwo (maxarg(left), maxarg(right)) 
 	| maxarg (AssignStm (id,exp))  = maxarg(exp)
 	| maxarg (PrintStm (explist)) =  len(explist)
@@ -53,7 +65,7 @@ fun maxarg (CompoundStm (left,right))=  maxOfTwo (maxarg(left), maxarg(right))
 	| maxarg (NumExp(t)) = 0
 	| maxarg (OpExp (e1,biop,e2))= maxOfTwo( maxarg(e1), maxarg(e2))
 	| maxarg (EseqExp (stm, exp) )= maxOfTwo( maxarg(stm), maxarg(exp))
-
+*)
 
 val ans= maxarg(prog) 
 
