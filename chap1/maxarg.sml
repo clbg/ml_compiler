@@ -5,7 +5,6 @@ fun maxOfTwo (a, b) =
 
 val lis= [1,2,3,4,55,3,1000,4,3,6,7]
 
-
 val max =foldl maxOfTwo 0  lis
 
 fun len (x::xs) = 1+len(xs) 
